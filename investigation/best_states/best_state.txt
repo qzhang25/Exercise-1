@@ -7,20 +7,20 @@ Basically using Timely and Effective Care(TEC) and Readmissions and Death(R&D) f
 Same process as the checking high quality care by hospital, the only thing I change is I sort by states and check the average scores for both table. 
 
 The top 10 state who have best average scores based on timely and effective care are from VA(10.7) to PA(17.2). 
-After rank top 10 state, I also decide to check the readmission and death average scores. After checking the original file, 
-the average score of top 10 states are 14 which is above the minimum socre 1.6 from the raw data.
 
  
-  
- 	State	TEC	R&D
-1	VA      10.7	14.3
-2	FL	10.9	13.9
-3	MD	12.4	14.0
-4	NJ	12.8	14.1
-5	NC	13.2	14.0
-6	UT	13.8	13.5
-7	MA	15.4	13.7
-8	CT	15.4	13.8
-9	ID	16.8	13.7
-10	PA	17.2	13.8
+ 	State	Average Score
+1	VA      10.7
+2	FL	10.9
+3	MD	12.4
+4	NJ	12.8
+5	NC	13.2
+6	UT	13.8
+7	MA	15.4
+8	CT	15.4
+9	ID	16.8
+10	PA	17.2
+
+
+
 
