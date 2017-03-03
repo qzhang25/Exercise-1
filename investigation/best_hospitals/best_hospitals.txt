@@ -1,25 +1,32 @@
 What hospitals are models of high-quality care?
 
-To answers, I choose Timely and Effective Care table to start my analysis. It stored and named °∞time_effec_info°± table in the system. Basically, I choose to compare the Timely and Effective Care data with the Readmissions and Deaths data which was stored and named into the read_deaths_info table. The key things is to check each categories average scores and rank them to get the best high-quality care - average scores.
+To answers, I choose Timely and Effective Care table to start my analysis. It stored and named ‚Äútime_effec_info‚Äù table in the system. Basically, I choose to compare the Timely and Effective Care data with the Readmissions and Deaths data which was stored and named into the read_deaths_info table. The key things is to check each categories average scores and rank them to get the best high-quality care - average scores.
 
-These categories are: Emergency Department, Surgical Care Improvement Project, Children°Øs Asthma, Heart Failure, Stroke Care, Pneumonia, Preventive Care, Blood Clot Prevention and Treatment, Heart Attack or Chest Pain, and Pregnancy and Delivery Care. I create code to check all categories average scores by each hospital.
+These categories are: Emergency Department, Surgical Care Improvement Project, Children‚Äôs Asthma, Heart Failure, Stroke Care, Pneumonia, Preventive Care, Blood Clot Prevention and Treatment, Heart Attack or Chest Pain, and Pregnancy and Delivery Care. I create code to check all categories average scores by each hospital.
 
-In addition, I calculate the average rankings for each hospital across all categories in a descending way. I list top 10 best high quality care hospital which from WESLEY MEDICAL CENTER (average score 25.7) to NOVANT HEALTH ROWAN MEDICAL CENTER (average score 10.9).
- 
-In addition, based on class discussion with the study groups, I decide to check the readmission and death rate to see if there are some deviations. The total average score of entire Readmission and Death Score are 14.0. These top 10 hospitals average scores are close to 14.0 and it is way much further than the minimum score (1.6). Therefore, I have strong confidence that my result is favorable to answer this question
+In addition, I calculate the average rankings for each hospital across all categories in a descending way. I list top 10 best high quality care hospital listed below.
 
- 	Hospital Name	                                Rank Timely and Effective Care	Rank Readmissions and Deaths
- 	 	 	 
-1	NOVANT HEALTH ROWAN MEDICAL CENTER      	        10.9	                                  14.2
-2	SSM ST MARYS HEALTH CENTER	                        19.5	                                  13.2
-3	CAROLINAS MEDICAL CENTER-NORTHEAST	                19.7	                                  13.8
-4	MEMORIAL REGIONAL HOSPITAL	                        20.2	                                  13.0
-5	LAWNWOOD REGIONAL MEDICAL CENTER & HEART INSTITUTE	22.4	                                  14.4
-6	NOVANT HEALTH PRESBYTERIAN MEDICAL CENTER	        23.4	                                  13.1
-7	FIRSTHEALTH MOORE REGIONAL HOSPITAL	                23.6	                                  13.0
-8	NYU HOSPITALS CENTER	                                24.1	                                  11.9
-9	BAYSTATE MEDICAL CENTER	                                25.7	                                  12.1
-10	WESLEY MEDICAL CENTER	                                25.7	                                  13.5
 
+MARICOPA MEDICAL CENTER	19.25
+
+HOSPITAL METROPOLITANO DR TITO MATTEI	19.200000000000003
+
+HOUSTON COUNTY COMMUNITY HOSPITAL	19.2
+
+UNIVERSITY HOSPITAL & CLINICS	19.15
+
+MITCHELL COUNTY HOSPITAL	18.45
+
+MAYO CLINIC HEALTH SYSTEM - WASECA	18.4
+
+HOSPITAL PEREA	18.375
+
+MOUNDVIEW MEMORIAL HOSPITAL AND CLINICS	18.2
+
+WELLMONT HANCOCK COUNTY HOSPITAL	18.1
+
+UNION COUNTY GENERAL HOSPITAL	17.875
+
+HOLMES COUNTY HOSPITAL AND CLINICS	17.85
 
 
