@@ -2,7 +2,7 @@ What states are models of high-quality care?
 
 
 To answer question, I choose the same method for the question 1 about finding the hospitals with models of high quality care.
-Basically using Timely and Effective Care(TEC) and Readmissions and Death(R&D) files and create tables named time_effec_info and read_death_info.
+Basically using Timely and Effective Care(TEC)
 
 Same process as the checking high quality care by hospital, the only thing I change is I sort by states and check the average scores for both table. 
 
