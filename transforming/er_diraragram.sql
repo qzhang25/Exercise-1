@@ -12,7 +12,7 @@ SELECT provider_id, hospital_name, state, condition, score, meas_id
 FROM time_effec_info;
 
 
---New table to get readmission_deaths_info
+--New table to for readmission death just incase if there are large variety on hospital general information
 DROP TABLE ER_read_deaths;
 CREATE TABLE ER_read_deaths AS
 SELECT provider_id, hospital_name, state, score
