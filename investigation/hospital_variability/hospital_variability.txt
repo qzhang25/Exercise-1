@@ -1,0 +1,25 @@
+Which procedures have the greatest variability between hospitals?
+
+I still use the Timely and Effective Care¡± data set. I use 10 medical categories:  Emergency Department, Surgical Care Improvement Project, Children¡¯s Asthma, Heart Failure, Stroke Care, Pneumonia, Preventive Care, Blood Clot Prevention and Treatment, Heart Attack or Chest Pain, and Pregnancy and Delivery Care.  
+
+For measuring the variety, I use analysis the standard deviation. As the table shows below, the highest variablilty is EMR(Emergency Dempartment) and the lowest variability is Surgical Care Improvement Project  
+
+EMR	37.765420353341696
+
+SCI	1.3191935869825637
+
+ASTH	12.719121104332118
+
+HF	3.102938945733613
+
+SC	5.149481390107591
+
+PNEU	3.615553737955558
+
+PREV	7.723536715170176
+
+BC	7.022975176145277
+
+HEART	12.491942923370495
+
+PREG	6.4324801760501185
