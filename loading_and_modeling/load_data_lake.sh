@@ -1,13 +1,12 @@
-	#Downloading the file 
-
+	#Download file
 wget -O hosp.zip https://data.medicare.gov/views/bg9k-emty/files/Nqcy71p9Ss2RSBWDmP77H1DQXcyacr2khotGbDHHW_s?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=Hospital_Revised_Flatfiles.zip
 	
   
-	#Unzipping the files
+	#Unzip file
 	unzip hosp.zip
 
 
-	#Renaming the files 
+	#Rename file 
 	tail -n+2 "Hospital General Information.csv" > "hospitals.csv"
 	tail -n+2 "Timely and Effective Care - Hospital.csv" > "effective_care.csv"
 	tail -n+2 "Readmissions and Deaths - Hospital.csv" > "readmissions.csv"
@@ -15,7 +14,7 @@ wget -O hosp.zip https://data.medicare.gov/views/bg9k-emty/files/Nqcy71p9Ss2RSBW
 	tail -n+2 "hvbp_hcahps_05_28_2015.csv" > "surveys_responses.csv"
 	
 
-	#Adding a file in the w205 folder named hospital compare
+	#Adding hospital compare
 	hdfs dfs -mkdir /user/w205/hospital_compare
 	
 
@@ -27,7 +26,7 @@ wget -O hosp.zip https://data.medicare.gov/views/bg9k-emty/files/Nqcy71p9Ss2RSBW
 	hdfs dfs -mkdir /user/w205/hospital_compare/surv_resp
 	
 
-	#Loading the renamed files above
+	#Loading the rename folder
 	hdfs dfs -put hospitals.csv /user/w205/hospital_compare/hosp_gen
 	hdfs dfs -put effective_care.csv /user/w205/hospital_compare/time_effec
 	hdfs dfs -put readmissions.csv /user/w205/hospital_compare/read_deaths
