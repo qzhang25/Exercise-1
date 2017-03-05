@@ -6,7 +6,7 @@ cor(X,Y)=cov(X,Y)/sd(X)sd(Y) to get my result
 Our data is match the central limited theorem and the sample size is greater than 30.  
 
 As the table shows below, all the survey responses correlation are negative.
-However, there are some outliers which have really small correlations such as total impovement(-0.07) and Discharge(-0.04) 
+However, there are some outliers which have really small correlations such as total impovement(-0.073) and doctor dimession(-0.05) 
  
 Finally, mostly, the survey response have strong neative correlation relationship with the hospital quality and we can say that, 
 better hospital quality have better survey response which means patients are more likely to build interation with good quality hospitals.
