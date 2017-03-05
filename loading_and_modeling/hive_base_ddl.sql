@@ -1,4 +1,4 @@
---DDL SQL for hosp gen info
+--DDL SQL for gen info
 DROP TABLE gen_info;
 CREATE EXTERNAL TABLE gen_info
 (provider_id string,
@@ -21,7 +21,7 @@ STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare/qinghos_gen';
 
 
--- DDL SQL for the time_effec 
+-- DDL SQL for the time_info 
 DROP TABLE time_info;
 CREATE EXTERNAL TABLE time_info
 (provider_id string,
@@ -48,7 +48,7 @@ WITH SERDEPROPERTIES ( "separatorChar" = ",",
 STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare/t_eff';
 
--- DDL SQL statement for meas_dates 
+-- DDL SQL statement for dates 
 DROP TABLE dates_info;
 CREATE EXTERNAL TABLE dates_info
 (meas_name string,
@@ -66,7 +66,7 @@ STORED AS TEXTFILE
 LOCATION '/user/w205/hospital_compare/dates';
 
 
---DDL SQL for the surv_resp 
+--DDL SQL for the survey 
 DROP TABLE survey_info;
 CREATE EXTERNAL TABLE survey_info
 (provider_id string,
