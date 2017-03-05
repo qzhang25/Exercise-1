@@ -9,7 +9,7 @@ FROM gen_info;
 DROP TABLE ERdiagram_effective_time;
 CREATE TABLE ERdiagram_effective_time AS
 SELECT provider_id, hospital_name, state, condition, score, meas_id
-FROM t_eff;
+FROM time_info;
 
 
 --New table to get survev_response_info. And try to calculate the percentage for the next step
