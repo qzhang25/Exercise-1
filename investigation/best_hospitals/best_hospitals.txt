@@ -1,10 +1,10 @@
 What hospitals are models of high-quality care?
 
-To answers, I choose Timely and Effective Care table to start my analysis. It stored and named “time_effec_info” table in the system. Basically, I choose to compare the Timely and Effective Care data with the Readmissions and Deaths data which was stored and named into the read_deaths_info table. The key things is to check each categories average scores and rank them to get the best high-quality care - average scores.
+I use time and effective data to analysis this question.  The key things is to check each categories average scores and rank them to get the best high-quality care - average scores.
 
-These categories are: Emergency Department, Surgical Care Improvement Project, Children’s Asthma, Heart Failure, Stroke Care, Pneumonia, Preventive Care, Blood Clot Prevention and Treatment, Heart Attack or Chest Pain, and Pregnancy and Delivery Care. I create code to check all categories average scores by each hospital.
+There are many key checking categories which have huge impact to review hospital rank such as Emergency Department, Surgical Care Improvement Project, Children’s Asthma, Heart Failure, Stroke Care,,etc.. Therefore, I choose to check all these atetories and get the averages score among these categories and rank them to get the top 10 list result.
 
-In addition, I calculate the average rankings for each hospital across all categories in a descending way. I list top 10 best high quality care hospital listed below.
+As the table blow shows: Maricopa Medical center have the highest score which means is the best quality hospital.
 
 
 MARICOPA MEDICAL CENTER	19.25
