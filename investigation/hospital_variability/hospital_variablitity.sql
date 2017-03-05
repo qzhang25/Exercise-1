@@ -2,7 +2,7 @@
 
  
 
-create table STD_FT
+create table STDEVIATION_FT
 as
 select  inline
         (
@@ -12,15 +12,11 @@ select  inline
                ,struct ('SCI'   ,STDDEV (sci_avg_score)  )
                ,struct ('ASTH'  ,STDDEV (asth_avg_score) )
                ,struct ('HF'    ,STDDEV (hf_avg_score)   )
-               ,struct ('SC'    ,STDDEV (sc_avg_score)   )
-               ,struct ('PNEU'  ,STDDEV (pneu_avg_score) )
-               ,struct ('PREV'  ,STDDEV (prev_avg_score) )
-               ,struct ('BC'    ,STDDEV (BC_avg_score)   )
-               ,struct ('HEART' ,STDDEV (heart_avg_score))
-               ,struct ('PREG'  ,STDDEV (preg_avg_score) )
+               ,struct ('SC'    ,STDDEV(sc_avg_score)   )
+
             )
         ) as (HOSP_VAR,RANGE)
  
-from    JOIN9    
+from    COMBINE4;    
 
-SELECT  * STD_FT;
+SELECT  * FROM STDEVIATION_FT;
