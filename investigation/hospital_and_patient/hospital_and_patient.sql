@@ -17,17 +17,17 @@ GROUP BY hospital_name
 ORDER BY tot_dim_avg_score DESC;
 
 --New table to combine  
-DROP TABLE COMBINE_F;
-CREATE TABLE COMBINE_F AS
-SELECT EFFEC_FIN.hospital_name, EFFEC_FIN.test_avg, SURV_AVG_F.nur_dim_avg_score, SURV_AVG_F.doc_dim_avg_score, SURV_AVG_F.staff_dim_avg_score, SURV_AVG_F.pain_dim_avg_score, SURV_AVG_F.med_dim_avg_score, SURV_AVG_F.clquiet_dim_avg_score, SURV_AVG_F.disch_dim_avg_score, SURV_AVG_F.total_ac_avg_score, SURV_AVG_F.total_imp_avg_score, SURV_AVG_F.tot_dim_avg_score
-FROM EFFEC_FIN
-INNER JOIN SURAVG_AA
-ON EFFEC_FIN.hospital_name = SURAVE_AA.hospital_name
-ORDER BY EFFEC_FIN.test_avg;
+DROP TABLE COMBINE_HOSPITAL;
+CREATE TABLE COMBINE_HOSPITAL AS
+SELECT FINAL_TIM.hospital_name, FINAL_TIM.test_avg, SURVEYAVG_AA.nur_dim_avg_score, SURVEYAVG_AA.doc_dim_avg_score, SURVEYAVG_AA.staff_dim_avg_score, SURVEYAVG_AA.pain_dim_avg_score, SURVEYAVG_AA.med_dim_avg_score, SURVEYAVG_AA.clquiet_dim_avg_score, SURVEYAVG_AA.disch_dim_avg_score, SURVEYAVG_AA.total_ac_avg_score, SURVEYAVG_AA.total_imp_avg_score, SURVEYAVG_AA.tot_dim_avg_score
+FROM FINAL_TIM
+INNER JOIN SURVEYAVG_AA
+ON FINAL_TIM.hospital_name = SURVEYAVG_AA.hospital_name
+ORDER BY FINAL_TIM.test_avg;
 
 
 --New table to caculate correlation
-create table Summary
+create table FINAL_Summary
 as
 select  inline
 (
@@ -45,5 +45,6 @@ struct ('Cor_nur', (Avg(test_avg * nur_dim_avg_score) - Avg(test_avg) * Avg(nur_
 ,struct ('Cor_tot_dim', (Avg(test_avg * tot_dim_avg_score) - Avg(test_avg) * Avg(tot_dim_avg_score)) / (Stddev(test_avg) * Stddev(tot_dim_avg_score)) )
 )
 ) as (Surv_Resp,Correlation)
-from    COMBINE_F;
+from    COMBINE_HOSPITAL;
 
+SELECT * FROM FINAL_Summary;
