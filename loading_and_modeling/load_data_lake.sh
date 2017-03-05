@@ -19,17 +19,15 @@ wget -O hosp.zip https://data.medicare.gov/views/bg9k-emty/files/Nqcy71p9Ss2RSBW
 	
 
 	#Adding a folder to store the data above
-	hdfs dfs -mkdir /user/w205/hospital_compare/hosp_gen
-	hdfs dfs -mkdir /user/w205/hospital_compare/time_effec
-	hdfs dfs -mkdir /user/w205/hospital_compare/read_deaths
-	hdfs dfs -mkdir /user/w205/hospital_compare/meas_dates
-	hdfs dfs -mkdir /user/w205/hospital_compare/surv_resp
+	hdfs dfs -mkdir /user/w205/hospital_compare/qinghos_gen
+	hdfs dfs -mkdir /user/w205/hospital_compare/t_eff
+	hdfs dfs -mkdir /user/w205/hospital_compare/dates
+	hdfs dfs -mkdir /user/w205/hospital_compare/su_res
 	
 
-	#Loading the rename folder
-	hdfs dfs -put hospitals.csv /user/w205/hospital_compare/hosp_gen
-	hdfs dfs -put effective_care.csv /user/w205/hospital_compare/time_effec
-	hdfs dfs -put readmissions.csv /user/w205/hospital_compare/read_deaths
-	hdfs dfs -put Measures.csv /user/w205/hospital_compare/meas_dates
-	hdfs dfs -put surveys_responses.csv /user/w205/hospital_compare/surv_resp
+	#Loading data
+	hdfs dfs -put hospitals.csv /user/w205/hospital_compare/qinghos_gen
+	hdfs dfs -put effective_care.csv /user/w205/hospital_compare/t_eff
+	hdfs dfs -put Measures.csv /user/w205/hospital_compare/dates
+	hdfs dfs -put surveys_responses.csv /user/w205/hospital_compare/su_res
 
