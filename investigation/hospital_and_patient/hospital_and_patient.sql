@@ -26,6 +26,7 @@ ON EFFEC_FIN.hospital_name = SURAVE_AA.hospital_name
 ORDER BY EFFEC_FIN.test_avg;
 
 
+--New table to caculate correlation
 create table Summary
 as
 select  inline
