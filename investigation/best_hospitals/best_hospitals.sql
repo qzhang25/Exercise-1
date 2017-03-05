@@ -117,66 +117,66 @@ INNER JOIN COMBINE5
 ON COMBINE5.hospital_name = Preventive_AVG.hospital_name;
 
 --Combining JOIN6 with Blood Clot Prevention and Treatment on average by hospital.
-DROP TABLE JOIN7;
-CREATE TABLE JOIN7 AS
-SELECT BC_AVG.hospital_name, BC_AVG.bc_avg_score, JOIN6.emr_avg_score, JOIN6.sci_avg_score, JOIN6.asth_avg_score, JOIN6.hf_avg_score, JOIN6.sc_avg_score, JOIN6.pneu_avg_score, JOIN6.prev_avg_score
-FROM BC_AVG
-INNER JOIN JOIN6
-ON JOIN6.hospital_name = BC_AVG.hospital_name;
+DROP TABLE COMBINE7;
+CREATE TABLE COMBINE7 AS
+SELECT BloodColt_AVG.hospital_name, BloodColt_AVG.bc_avg_score, COMBINE6.emr_avg_score, COMBINE6.sci_avg_score, COMBINE6.asth_avg_score, COMBINE6.hf_avg_score, COMBINE6.sc_avg_score, COMBINE6.pneu_avg_score, COMBINE6.prev_avg_score
+FROM BloodColt_AVG
+INNER JOIN COMBINE6
+ON COMBINE6.hospital_name = BloodColt_AVG.hospital_name;
 
 --Combining JOIN7 with Heart Attack or Chest Pain on average by hospital.
-DROP TABLE JOIN8;
-CREATE TABLE JOIN8 AS
-SELECT HEART_AVG.hospital_name, HEART_AVG.heart_avg_score, JOIN7.emr_avg_score, JOIN7.sci_avg_score, JOIN7.asth_avg_score, JOIN7.hf_avg_score, JOIN7.sc_avg_score, JOIN7.pneu_avg_score, JOIN7.prev_avg_score, JOIN7.BC_avg_score
-FROM HEART_AVG
-INNER JOIN JOIN7
-ON JOIN7.hospital_name = HEART_AVG.hospital_name;
+DROP TABLE COMBINE8;
+CREATE TABLE COMBINE8 AS
+SELECT hearattack_AVG.hospital_name, hearattack_AVG.heart_avg_score, COMBINE7.emr_avg_score, COMBINE7.sci_avg_score, COMBINE7.asth_avg_score, COMBINE7.hf_avg_score, COMBINE7.sc_avg_score, COMBINE7.pneu_avg_score, COMBINE7.prev_avg_score, COMBINE7.BC_avg_score
+FROM hearattack_AVG
+INNER JOIN COMBINE7
+ON COMBINE7.hospital_name = hearattack_AVG.hospital_name;
 
 --Combining JOIN8 with Pregnancy and Delivery on average by hospital.
-DROP TABLE JOIN9;
-CREATE TABLE JOIN9 AS
-SELECT PREG_AVG.hospital_name, PREG_AVG.preg_avg_score, JOIN8.emr_avg_score, JOIN8.sci_avg_score, JOIN8.asth_avg_score, JOIN8.hf_avg_score, JOIN8.sc_avg_score, JOIN8.pneu_avg_score, JOIN8.prev_avg_score, JOIN8.BC_avg_score, JOIN8.heart_avg_score
-FROM PREG_AVG
-INNER JOIN JOIN8
-ON JOIN8.hospital_name = PREG_AVG.hospital_name;
+DROP TABLE COMBINE9;
+CREATE TABLE COMBINE9 AS
+SELECT Pregnancy_AVG.hospital_name, Pregnancy_AVG.preg_avg_score, COMBINE8.emr_avg_score, COMBINE8.sci_avg_score, COMBINE8.asth_avg_score, COMBINE8.hf_avg_score, COMBINE8.sc_avg_score, COMBINE8.pneu_avg_score, COMBINE8.prev_avg_score, COMBINE8.BC_avg_score, COMBINE8.heart_avg_score
+FROM Pregnancy_AVG
+INNER JOIN COMBINE8
+ON COMBINE8.hospital_name = Pregnancy_AVG.hospital_name;
 
 --New rank table for JOIN9 for first five columns.
-DROP TABLE TIME_F5_RANK;
-CREATE TABLE TIME_F5_RANK AS
+DROP TABLE First5_RANK;
+CREATE TABLE First5_RANK AS
 SELECT hospital_name,
 RANK() OVER (ORDER BY emr_avg_score DESC) AS emr_rank,
 RANK() OVER (ORDER BY sci_avg_score DESC) AS sci_rank,
 RANK() OVER (ORDER BY asth_avg_score DESC) AS asth_rank,
 RANK() OVER (ORDER BY hf_avg_score DESC) AS hf_rank,
 RANK() OVER (ORDER BY sc_avg_score DESC) AS sc_rank
-FROM JOIN9;
+FROM COMBINE9;
 
 -- New rank table for JOIN9 for last five columns.
-DROP TABLE TIME_L5_RANK;
-CREATE TABLE TIME_L5_RANK AS
+DROP TABLE Last5_RANK;
+CREATE TABLE Last5_RANK AS
 SELECT hospital_name,
 RANK() OVER (ORDER BY pneu_avg_score DESC) AS pneu_rank,
 RANK() OVER (ORDER BY prev_avg_score DESC) AS prev_rank,
 RANK() OVER (ORDER BY BC_avg_score DESC) AS BC_rank,
 RANK() OVER (ORDER BY heart_avg_score DESC) AS heart_rank,
 RANK() OVER (ORDER BY preg_avg_score DESC) AS preg_rank
-FROM JOIN9;
+FROM COMBINE9;
 
 --Building the two tables with the average scores ranked in top 5 and last 5.
-DROP TABLE TIME_EFEC_TOT;
-CREATE TABLE TIME_EFEC_TOT AS
-SELECT TIME_F5_RANK.hospital_name, TIME_F5_RANK.emr_rank, TIME_F5_RANK.sci_rank, TIME_F5_RANK.asth_rank, TIME_F5_RANK.hf_rank, TIME_F5_RANK.sc_rank, TIME_L5_RANK.pneu_rank, TIME_L5_RANK.prev_rank, TIME_L5_RANK.BC_rank, TIME_L5_RANK.heart_rank, TIME_L5_RANK.preg_rank
-FROM TIME_F5_RANK
-INNER JOIN TIME_L5_RANK
-ON TIME_F5_RANK.hospital_name = TIME_L5_RANK.hospital_name;
+DROP TABLE TIME_SUMMARY;
+CREATE TABLE TIME_SUMMARY AS
+SELECT First5_RANK.hospital_name, First5_RANK.emr_rank, First5_RANK.sci_rank, First5_RANK.asth_rank, First5_RANK.hf_rank, First5_RANK.sc_rank, Last5_RANK.pneu_rank, Last5_RANK.prev_rank, Last5_RANK.BC_rank, Last5_RANK.heart_rank, Last5_RANK.preg_rank
+FROM First5_RANK
+INNER JOIN Last5_RANK
+ON First5_RANK.hospital_name = Last5_RANK.hospital_name;
 
 --Ranking the categories scores. 
-DROP TABLE EFFEC_FIN;
-CREATE TABLE EFFEC_FIN AS
+DROP TABLE FINAL_TIME;
+CREATE TABLE FINAL_TIME AS
 SELECT hospital_name, emr_rank, sci_rank, asth_rank, hf_rank, sc_rank, pneu_rank, prev_rank, BC_rank, heart_rank, preg_rank,
 (emr_rank + sci_rank + asth_rank + hf_rank + sc_rank + pneu_rank + prev_rank + BC_rank + heart_rank + preg_rank)/10 AS test_avg
-FROM TIME_EFEC_TOT
+FROM TIME_SUMMARY
 ORDER BY test_avg ASC;
 
 --Print top 10 result 
-SELECT * FROM EFFIC_FIN LIMIT 10;
+SELECT * FROM FINAL_TIME LIMIT 10;
