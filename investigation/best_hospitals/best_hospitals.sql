@@ -77,17 +77,6 @@ RANK() OVER (ORDER BY hf_avg_score DESC) AS hf_rank,
 RANK() OVER (ORDER BY sc_avg_score DESC) AS sc_rank
 FROM COMBINE4;
 
--- New rank table for JOIN9 for last five columns.
-DROP TABLE Last5_RANK;
-CREATE TABLE Last5_RANK AS
-SELECT hospital_name,
-RANK() OVER (ORDER BY pneu_avg_score DESC) AS pneu_rank,
-RANK() OVER (ORDER BY prev_avg_score DESC) AS prev_rank,
-RANK() OVER (ORDER BY BC_avg_score DESC) AS BC_rank,
-RANK() OVER (ORDER BY heart_avg_score DESC) AS heart_rank,
-RANK() OVER (ORDER BY preg_avg_score DESC) AS preg_rank
-FROM COMBINE9;
-
 --Ranking the categories scores. 
 DROP TABLE FINAL_TIM;
 CREATE TABLE FINAL_TIM AS
