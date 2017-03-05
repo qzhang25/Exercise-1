@@ -1,120 +1,120 @@
 --Building a descending average score table “Emergency Department”. 
-DROP TABLE EMR_AVG;
-CREATE TABLE EMR_AVG AS
-SELECT hospital_name, AVG(score) AS emr_avg_score FROM ER_time_effec WHERE condition = 'Emergency Department'
+DROP TABLE Emergency_AVG;
+CREATE TABLE Emergency_AVG AS
+SELECT hospital_name, AVG(score) AS emr_avg_score FROM ERdiagram_effective_time WHERE condition = 'Emergency Department'
 GROUP BY hospital_name
 ORDER BY emr_avg_score DESC;
 
 --Building a descending average score table for “Surgical Care Improvement”.
-DROP TABLE SCI_AVG;
-CREATE TABLE SCI_AVG AS
-SELECT hospital_name, AVG(score) AS sci_avg_score FROM ER_time_effec WHERE condition = 'Surgical Care Improvement Project'
+DROP TABLE Surgicalcare_AVG;
+CREATE TABLE Surgicalcare_AVG AS
+SELECT hospital_name, AVG(score) AS sci_avg_score FROM ERdiagram_effective_time WHERE condition = 'Surgical Care Improvement Project'
 GROUP BY hospital_name
 ORDER BY sci_avg_score DESC;
 
 --Building a descending average score table for “Children’s Asthma”. 
-DROP TABLE ASTH_AVG;
-CREATE TABLE ASTH_AVG AS
-SELECT hospital_name, AVG(score) AS asth_avg_score FROM ER_time_effec WHERE meas_id = 'CAC_3'
+DROP TABLE childrenasthma_AVG;
+CREATE TABLE childrenasthma_AVG AS
+SELECT hospital_name, AVG(score) AS asth_avg_score FROM ERdiagram_effective_time WHERE meas_id = 'CAC_3'
 GROUP BY hospital_name
 ORDER BY asth_avg_score DESC;
 
 --Building a descending average score for “Heart Failure”.
-DROP TABLE HF_AVG;
-CREATE TABLE HF_AVG AS
-SELECT hospital_name, AVG(score) AS hf_avg_score FROM ER_time_effec WHERE condition = 'Heart Failure'
+DROP TABLE Heartfailure_AVG;
+CREATE TABLE Heartfailure_AVG AS
+SELECT hospital_name, AVG(score) AS hf_avg_score FROM ERdiagram_effective_time WHERE condition = 'Heart Failure'
 GROUP BY hospital_name
 ORDER BY hf_avg_score DESC;
 
 --Building a descending average score table for “Stroke Care” .
-DROP TABLE SC_AVG;
-CREATE TABLE SC_AVG AS
-SELECT hospital_name, AVG(score) AS sc_avg_score FROM ER_time_effec WHERE condition = 'Stroke Care'
+DROP TABLE StrokeC_AVG;
+CREATE TABLE StrokeC_AVG AS
+SELECT hospital_name, AVG(score) AS sc_avg_score FROM ERdiagram_effective_time WHERE condition = 'Stroke Care'
 GROUP BY hospital_name
 ORDER BY sc_avg_score DESC;
 
 --Building a descending average score table for “Pneumonia”.
-DROP TABLE PNEU_AVG;
-CREATE TABLE PNEU_AVG AS
-SELECT hospital_name, AVG(score) AS pneu_avg_score FROM ER_time_effec WHERE condition = 'Pneumonia'
+DROP TABLE Pneumonia_AVG;
+CREATE TABLE Pneumonia_AVG AS
+SELECT hospital_name, AVG(score) AS pneu_avg_score FROM ERdiagram_effective_time WHERE condition = 'Pneumonia'
 GROUP BY hospital_name
 ORDER BY pneu_avg_score DESC;
 
 --Building a descending table that takes the average scores of each hospital for “Preventive Care” .
-DROP TABLE PREV_AVG;
-CREATE TABLE PREV_AVG AS
-SELECT hospital_name, AVG(score) AS prev_avg_score FROM ER_time_effec WHERE condition = 'Preventive Care'
+DROP TABLE Preventive_AVG;
+CREATE TABLE Preventive_AVG AS
+SELECT hospital_name, AVG(score) AS prev_avg_score FROM ERdiagram_effective_time WHERE condition = 'Preventive Care'
 GROUP BY hospital_name
 ORDER BY prev_avg_score DESC;
 
 --Building a descending average score table for “Blood Clot Prevention and Treatment” .
-DROP TABLE BC_AVG;
-CREATE TABLE BC_AVG AS
-SELECT hospital_name, AVG(score) AS bc_avg_score FROM ER_time_effec WHERE condition = 'Blood Clot Prevention and Treatment'
+DROP TABLE BloodColt_AVG;
+CREATE TABLE BloodColt AS
+SELECT hospital_name, AVG(score) AS bc_avg_score FROM ERdiagram_effective_time WHERE condition = 'Blood Clot Prevention and Treatment'
 GROUP BY hospital_name
 ORDER BY bc_avg_score DESC;
 
 --Building a descending average score table for “Heart Attack or Chest Pain” .
-DROP TABLE HEART_AVG;
-CREATE TABLE HEART_AVG AS
-SELECT hospital_name, AVG(score) AS heart_avg_score FROM ER_time_effec WHERE condition = 'Heart Attack or Chest Pain'
+DROP TABLE hearattack_AVG;
+CREATE TABLE hearattack_AVG AS
+SELECT hospital_name, AVG(score) AS heart_avg_score FROM ERdiagram_effective_time WHERE condition = 'Heart Attack or Chest Pain'
 GROUP BY hospital_name
 ORDER BY heart_avg_score DESC;
 
 --Building a descending average score table for “Pregnancy and Delivery Care”.
-DROP TABLE PREG_AVG;
-CREATE TABLE PREG_AVG AS
+DROP TABLE Pregnancy_AVG;
+CREATE TABLE Pregnancy_AVG AS
 SELECT hospital_name, AVG(score) AS preg_avg_score FROM ER_time_effec WHERE condition = 'Pregnancy and Delivery Care'
 GROUP BY hospital_name
 ORDER BY preg_avg_score DESC;
 
 --Combining Emergency Department with Surgical Care Improvement score on average by hospital.
-DROP TABLE JOIN1;
-CREATE TABLE JOIN1 AS
-SELECT EMR_AVG.hospital_name, EMR_AVG.emr_avg_score, SCI_AVG.sci_avg_score
-FROM EMR_AVG
-INNER JOIN SCI_AVG
-ON EMR_AVG.hospital_name = SCI_AVG.hospital_name;
+DROP TABLE COMBINE1;
+CREATE TABLE COMBINE1 AS
+SELECT Emergency_AVG.hospital_name, Emergency_AVG.emr_avg_score, Surgicalcare_AVG.sci_avg_score
+FROM Emergency_AVG
+INNER JOIN Surgicalcare_AVG
+ON Emergency_AVG.hospital_name = Surgicalcare_AVG.hospital_name;
 
 --Combining JOIN1 with Children’s Asthma score on average by hospital.
-DROP TABLE JOIN2;
-CREATE TABLE JOIN2 AS
-SELECT ASTH_AVG.hospital_name, ASTH_AVG.asth_avg_score, JOIN1.emr_avg_score, JOIN1.sci_avg_score
-FROM ASTH_AVG
-INNER JOIN JOIN1
-ON JOIN1.hospital_name = ASTH_AVG.hospital_name;
+DROP TABLE COMBINE2;
+CREATE TABLE COMEBINE2 AS
+SELECT childrenasthma_AVG.hospital_name, childrenasthma_AVG.asth_avg_score, COMBINE1.emr_avg_score, COMBINE1.sci_avg_score
+FROM childrenasthma_AVG
+INNER JOIN COMBINE1
+ON COMBINE1.hospital_name = childrenasthma_AVG.hospital_name;
 
 --Combing JOIN2 with Heart Failure scores by hospital.
-DROP TABLE JOIN3;
-CREATE TABLE JOIN3 AS
-SELECT HF_AVG.hospital_name, HF_AVG.hf_avg_score, JOIN2.emr_avg_score, JOIN2.sci_avg_score, JOIN2.asth_avg_score
-FROM HF_AVG
-INNER JOIN JOIN2
-ON JOIN2.hospital_name = HF_AVG.hospital_name;
+DROP TABLE COMBINE3;
+CREATE TABLE COMBINE3 AS
+SELECT Heartfailure_AVG.hospital_name, Heartfailure_AVG.hf_avg_score, COMBINE2.emr_avg_score, COMBINE2.sci_avg_score, COMBINE2.asth_avg_score
+FROM Heartfailure_AVG
+INNER JOIN COMBINE2
+ON COMBINE2.hospital_name = Heartfailure_AVG.hospital_name;
 
 --Combining JOIN3 with Stroke Care score on average by hospital.
-DROP TABLE JOIN4;
-CREATE TABLE JOIN4 AS
-SELECT SC_AVG.hospital_name, SC_AVG.sc_avg_score, JOIN3.emr_avg_score, JOIN3.sci_avg_score, JOIN3.asth_avg_score, JOIN3.hf_avg_score
-FROM SC_AVG
-INNER JOIN JOIN3
-ON JOIN3.hospital_name = SC_AVG.hospital_name;
+DROP TABLE COMBINE4;
+CREATE TABLE COMBINE4 AS
+SELECT StrokeC_AVG.hospital_name, StrokeC_AVG.sc_avg_score, COMBINE3.emr_avg_score, COMBINE3.sci_avg_score, COMBINE3.asth_avg_score, COMBINE3.hf_avg_score
+FROM StrokeC_AVG
+INNER JOIN COMBINE3
+ON COMBINE3.hospital_name = StrokeC_AVG.hospital_name;
 
 --Combining JOIN4 with Pneumonia score on average by hospital.
-DROP TABLE JOIN5;
-CREATE TABLE JOIN5 AS
-SELECT PNEU_AVG.hospital_name, PNEU_AVG.pneu_avg_score, JOIN4.emr_avg_score, JOIN4.sci_avg_score, JOIN4.asth_avg_score, JOIN4.hf_avg_score, JOIN4.sc_avg_score
-FROM PNEU_AVG
-INNER JOIN JOIN4
-ON JOIN4.hospital_name = PNEU_AVG.hospital_name;
+DROP TABLE COMBINE5;
+CREATE TABLE COMBINE5 AS
+SELECT Pneumonia_AVG.hospital_name, Pneumonia_AVG.pneu_avg_score, COMBINE4.emr_avg_score, COMBINE4.sci_avg_score, COMBINE4.asth_avg_score, COMBINE.hf_avg_score, COMBINE4.sc_avg_score
+FROM Pneumonia_AVG
+INNER JOIN COMBINE4
+ON COMBINE4.hospital_name = Pneumonia_AVG.hospital_name;
 
 --Combing JOIN5 with Preventive score on average by hospital.
-DROP TABLE JOIN6;
-CREATE TABLE JOIN6 AS
-SELECT PREV_AVG.hospital_name, PREV_AVG.prev_avg_score, JOIN5.emr_avg_score, JOIN5.sci_avg_score, JOIN5.asth_avg_score, JOIN5.hf_avg_score, JOIN5.sc_avg_score, JOIN5.pneu_avg_score
-FROM PREV_AVG
-INNER JOIN JOIN5
-ON JOIN5.hospital_name = PREV_AVG.hospital_name;
+DROP TABLE COMBINE6;
+CREATE TABLE COMBINE6 AS
+SELECT Preventive_AVG.hospital_name, Preventive_AVG.prev_avg_score, COMBINE5.emr_avg_score, COMBINE5.sci_avg_score, COMBINE5.asth_avg_score, COMBINE5.hf_avg_score, COMBINE5.sc_avg_score, COMBINE5.pneu_avg_score
+FROM Preventive_AVG
+INNER JOIN COMBINE5
+ON COMBINE5.hospital_name = Preventive_AVG.hospital_name;
 
 --Combining JOIN6 with Blood Clot Prevention and Treatment on average by hospital.
 DROP TABLE JOIN7;
