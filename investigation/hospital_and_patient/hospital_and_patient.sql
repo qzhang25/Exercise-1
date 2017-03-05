@@ -1,6 +1,6 @@
 --New table for all the checking categories 
-DROP TABLE SURAVG_AA;
-CREATE TABLE SURAVG_AA AS
+DROP TABLE SURVEYAVG_AA;
+CREATE TABLE SURVEYAVG_AA AS
 SELECT hospital_name,
 AVG(nur_dim) AS nur_dim_avg_score,
 AVG(doc_dim) AS doc_dim_avg_score,
@@ -12,7 +12,7 @@ AVG(disch_dim) AS disch_dim_avg_score,
 AVG(total_ac) AS total_ac_avg_score,
 AVG(total_imp) AS total_imp_avg_score,
 AVG(total_dim) AS tot_dim_avg_score
-FROM ER_surv_resp
+FROM ERdiagram_survey_resp
 GROUP BY hospital_name
 ORDER BY tot_dim_avg_score DESC;
 
