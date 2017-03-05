@@ -3,20 +3,20 @@ What states are models of high-quality care?
 
 I use the same process as the checking high quality care by hospital, the only thing I change is I sort by states and check the average scores for both table. 
 
-The top 10 state who have best average scores based on timely and effective care are from VA(10.7) to PA(17.2). 
+The top 10 state who have best average scores based on timely and effective care are from NJ(5.0) to UT(14.2). 
 
  
  	State	Average Score
-1	VA      10.7
-2	FL	10.9
-3	MD	12.4
-4	NJ	12.8
-5	NC	13.2
-6	UT	13.8
-7	MA	15.4
-8	CT	15.4
-9	ID	16.8
-10	PA	17.2
+NJ	5.0
+FL	5.8
+VA	6.8
+NC	8.6
+MD	10.4
+MA	10.6
+NV	12.8
+CT	13.6
+SC	14.0
+UT	14.2
 
 
 
