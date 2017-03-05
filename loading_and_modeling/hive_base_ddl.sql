@@ -1,6 +1,6 @@
 --DDL SQL for hosp gen info
-DROP TABLE hosp_gen_info;
-CREATE EXTERNAL TABLE hosp_gen_info
+DROP TABLE gen_info;
+CREATE EXTERNAL TABLE gen_info
 (provider_id string,
 hospital_name string,
 address string,
@@ -18,12 +18,12 @@ WITH SERDEPROPERTIES ( "separatorChar" = ",",
 "escapeChar" = '\\'
 )
 STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare/hosp_gen';
+LOCATION '/user/w205/hospital_compare/qinghos_gen';
 
 
 -- DDL SQL for the time_effec 
-DROP TABLE time_effec_info;
-CREATE EXTERNAL TABLE time_effec_info
+DROP TABLE time_info;
+CREATE EXTERNAL TABLE time_info
 (provider_id string,
 hospital_name string,
 address string,
@@ -46,44 +46,11 @@ WITH SERDEPROPERTIES ( "separatorChar" = ",",
 "escapeChar" = '\\'
 )
 STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare/time_effec';
-
-
---DDL SQL for the read_deaths 
-DROP TABLE read_deaths_info;
-CREATE EXTERNAL TABLE read_deaths_info
-(provider_id string,
-hospital_name string,
-address string,
-city string,
-state string,
-zip_code string,
-county_name string,
-phone_number string,
-meas_name string,
-meas_id string,
-comp_to_nat string,
-denom int,
-score int,
-low_est int,
-high_est int,
-footnote string,
-meas_start date,
-meas_end date)
-ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
-WITH SERDEPROPERTIES ( "separatorChar" = ",",
-"quoteChar" = '"',
-"escapeChar" = '\\'
-)
-STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare/read_deaths';
-
-
-
+LOCATION '/user/w205/hospital_compare/t_eff';
 
 -- DDL SQL statement for meas_dates 
-DROP TABLE meas_dates_info;
-CREATE EXTERNAL TABLE meas_dates_info
+DROP TABLE dates_info;
+CREATE EXTERNAL TABLE dates_info
 (meas_name string,
 meas_id string,
 meas_st_qrt string,
@@ -96,12 +63,12 @@ WITH SERDEPROPERTIES ( "separatorChar" = ",",
 "escapeChar" = '\\'
 )
 STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare/meas_dates';
+LOCATION '/user/w205/hospital_compare/dates';
 
 
 --DDL SQL for the surv_resp 
-DROP TABLE surv_resp_info;
-CREATE EXTERNAL TABLE surv_resp_info
+DROP TABLE survey_info;
+CREATE EXTERNAL TABLE survey_info
 (provider_id string,
 hospital_name string,
 address string,
@@ -141,4 +108,4 @@ WITH SERDEPROPERTIES ( "separatorChar" = ",",
 "escapeChar" = '\\'
 )
 STORED AS TEXTFILE
-LOCATION '/user/w205/hospital_compare/surv_resp';
+LOCATION '/user/w205/hospital_compare/su_res';
