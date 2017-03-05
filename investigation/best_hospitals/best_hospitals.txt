@@ -4,29 +4,17 @@ I use time and effective data to analysis this question.  The key things is to c
 
 There are many key checking categories which have huge impact to review hospital rank such as Emergency Department, Surgical Care Improvement Project, Children’s Asthma, Heart Failure, Stroke Care,,etc.. Therefore, I choose to check all these atetories and get the averages score among these categories and rank them to get the top 10 list result.
 
-As the table blow shows: Maricopa Medical center have the highest score which means is the best quality hospital.
+As the table blow shows: METHODIST HEALTHCARE MEMPHIS HOSPITALS have the highest score which means is the best quality hospital.
 
 
-MARICOPA MEDICAL CENTER	19.25
-
-HOSPITAL METROPOLITANO DR TITO MATTEI	19.200000000000003
-
-HOUSTON COUNTY COMMUNITY HOSPITAL	19.2
-
-UNIVERSITY HOSPITAL & CLINICS	19.15
-
-MITCHELL COUNTY HOSPITAL	18.45
-
-MAYO CLINIC HEALTH SYSTEM - WASECA	18.4
-
-HOSPITAL PEREA	18.375
-
-MOUNDVIEW MEMORIAL HOSPITAL AND CLINICS	18.2
-
-WELLMONT HANCOCK COUNTY HOSPITAL	18.1
-
-UNION COUNTY GENERAL HOSPITAL	17.875
-
-HOLMES COUNTY HOSPITAL AND CLINICS	17.85
-
+NOVANT HEALTH ROWAN MEDICAL CENTER		10.25
+BAYSTATE MEDICAL CENTER		11.0
+MEMORIAL REGIONAL HOSPITAL		13.75
+UNIVERITY OF MD BALTO WASHINGTON  MEDICAL CENTER	13.75
+UNIVERSITY OF KENTUCKY HOSPITAL	18.75
+LAWNWOOD REGIONAL MEDICAL CENTER & HEART INSTITUTE	21.0
+SAINT PETER'S UNIVERSITY HOSPITAL	21.0
+CAROLINAS MEDICAL CENTER-NORTHEAST	22.75
+TIFT REGIONAL MEDICAL CENTER	23.0
+METHODIST HEALTHCARE MEMPHIS HOSPITALS		23.0
 
