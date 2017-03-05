@@ -77,7 +77,7 @@ INNER JOIN Surgicalcare_AVG
 ON Emergency_AVG.hospital_name = Surgicalcare_AVG.hospital_name;
 
 --Combining JOIN1 with Children’s Asthma score on average by hospital.
-DROP TABLE COMBINE2;
+DROP TABLE COMEBINE2;
 CREATE TABLE COMEBINE2 AS
 SELECT childrenasthma_AVG.hospital_name, childrenasthma_AVG.asth_avg_score, COMBINE1.emr_avg_score, COMBINE1.sci_avg_score
 FROM childrenasthma_AVG
@@ -87,10 +87,10 @@ ON COMBINE1.hospital_name = childrenasthma_AVG.hospital_name;
 --Combing JOIN2 with Heart Failure scores by hospital.
 DROP TABLE COMBINE3;
 CREATE TABLE COMBINE3 AS
-SELECT Heartfailure_AVG.hospital_name, Heartfailure_AVG.hf_avg_score, COMBINE2.emr_avg_score, COMBINE2.sci_avg_score, COMBINE2.asth_avg_score
+SELECT Heartfailure_AVG.hospital_name, Heartfailure_AVG.hf_avg_score, COMEBINE2.emr_avg_score, COMEBINE2.sci_avg_score, COMEBINE2.asth_avg_score
 FROM Heartfailure_AVG
-INNER JOIN COMBINE2
-ON COMBINE2.hospital_name = Heartfailure_AVG.hospital_name;
+INNER JOIN COMEBINE2
+ON COMEBINE2.hospital_name = Heartfailure_AVG.hospital_name;
 
 --Combining JOIN3 with Stroke Care score on average by hospital.
 DROP TABLE COMBINE4;
