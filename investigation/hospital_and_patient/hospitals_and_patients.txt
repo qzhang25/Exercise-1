@@ -1,0 +1,38 @@
+Are average scores for hospital quality correlated with patient survey responses?
+
+I used the data from ¡°surv_resp_info¡± table and based on the correlation formula 
+cor(X,Y)=cov(X,Y)/sd(X)sd(Y)
+
+Finally, I calculate the correlation foe each checking categories related survey response data 
+
+As the table shows below, the survey responses have a negative correlation relationship.
+However, there are some outliers in this table which I created. Most categories follow the rules I found above, 
+but for Discharge and Dimension and Total Improvement do not have strong relationship with the survey response. 
+Therefore, the final answer is mostly, the survey response have correlation relationship with the hospital quality and we can say that, 
+better hospital quality have better survey response which means patients are more likely to build interation with good quality hospitals.
+
+
+
+
+
+Cor_nur	              -0.16896119145230745
+
+Cor_doc	              -0.17719653672978075
+
+Cor_staff             -0.1650960189134516
+
+Cor_pain              -0.22179052920280418
+
+Cor_med	              -0.19177657893212846
+
+Cor_clquiet	      -0.1830687922337561
+
+Cor_disch	      -0.041515734887803045
+
+Cor_tot_ach	      -0.23489949077028072
+
+Cor_tot_imp	      -0.07733197246262519
+
+Cor_tot_dim	      -0.21108149285875458
+
+
