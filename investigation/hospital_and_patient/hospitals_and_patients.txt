@@ -15,24 +15,15 @@ better hospital quality have better survey response which means patients are mor
 
 
 
-Cor_nur	              -0.16896119145230745
-
-Cor_doc	              -0.17719653672978075
-
-Cor_staff             -0.1650960189134516
-
-Cor_pain              -0.22179052920280418
-
-Cor_med	              -0.19177657893212846
-
-Cor_clquiet	      -0.1830687922337561
-
-Cor_disch	      -0.041515734887803045
-
-Cor_tot_ach	      -0.23489949077028072
-
-Cor_tot_imp	      -0.07733197246262519
-
-Cor_tot_dim	      -0.21108149285875458
+Cor_nur	-0.08486179604329434
+Cor_doc	-0.0575969102671386
+Cor_staff	-0.08214605788608124
+Cor_pain	-0.11757489721625611
+Cor_med	-0.08301739846667418
+Cor_clquiet	-0.10181357534318058
+Cor_disch	-0.07391044511517415
+Cor_tot_ach	-0.2375861976116728
+Cor_tot_imp	-0.07897254115112767
+Cor_tot_dim	-0.21561681645931133
 
 
