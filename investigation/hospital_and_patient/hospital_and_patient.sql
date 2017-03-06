@@ -1,4 +1,4 @@
---New table for all the checking categories 
+--Caculate the Average Score for Survey Response Data 
 DROP TABLE SURVEYAVG_AA;
 CREATE TABLE SURVEYAVG_AA AS
 SELECT hospital_name,
@@ -16,7 +16,7 @@ FROM ERdiagram_survey_resp
 GROUP BY hospital_name
 ORDER BY tot_dim_avg_score DESC;
 
---New table to combine  
+--Combine the previous table with the Hospital Average table for the question 1  
 DROP TABLE COMBINE_HOSPITAL;
 CREATE TABLE COMBINE_HOSPITAL AS
 SELECT FINAL_TIM.hospital_name, FINAL_TIM.test_avg, SURVEYAVG_AA.nur_dim_avg_score, SURVEYAVG_AA.doc_dim_avg_score, SURVEYAVG_AA.staff_dim_avg_score, SURVEYAVG_AA.pain_dim_avg_score, SURVEYAVG_AA.med_dim_avg_score, SURVEYAVG_AA.clquiet_dim_avg_score, SURVEYAVG_AA.disch_dim_avg_score, SURVEYAVG_AA.total_ac_avg_score, SURVEYAVG_AA.total_imp_avg_score, SURVEYAVG_AA.tot_dim_avg_score
@@ -26,7 +26,7 @@ ON FINAL_TIM.hospital_name = SURVEYAVG_AA.hospital_name
 ORDER BY FINAL_TIM.test_avg;
 
 
---New table to caculate correlation
+--Correlation
 create table FINAL_Summary
 as
 select  inline
