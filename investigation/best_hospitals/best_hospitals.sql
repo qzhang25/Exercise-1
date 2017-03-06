@@ -80,8 +80,8 @@ FROM COMBINE4;
 --Final time evaluation table. 
 DROP TABLE FINAL_TIM;
 CREATE TABLE FINAL_TIM AS
-SELECT hospital_name, emergency_rank, scarei_rank, childasth_rank, hospitalf_rank,
-(emergency_rank + scarei_rank + childasth_rank + hospitalf_rank)/4 AS final_avg
+SELECT hospital_name, emergency_rank, scarei_rank, childasth_rank, hospitalf_rank,strokec_rank,
+(emergency_rank + scarei_rank + childasth_rank + hospitalf_rank + strokec_rank)/5 AS final_avg
 FROM First4_RANK
 ORDER BY final_avg ASC;
 
