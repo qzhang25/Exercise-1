@@ -6,16 +6,16 @@ I use the same process as the checking high quality care by hospital, the only t
 The top 10 state who have best average scores based on timely and effective care are from OK(32.6) to OR(27.8). 
 
  
-OK	37	37	18	36	35	32.6
-PR	1	40	40	38	40	31.8
-MS	36	38	5	39	39	31.4
-NE	39	29	36	30	16	30.0
-LA	25	36	24	32	33	30.0
-AR	34	9	39	26	36	28.8
-DC	2	39	29	33	38	28.2
-MN	35	34	25	37	9	28.0
-AL	28	23	30	27	31	27.8
-OR	21	33	36	31	18	27.8
+OK		32.6
+PR		31.8
+MS		31.4
+NE		30.0
+LA		30.0
+AR		28.8
+DC		28.2
+MN		28.0
+AL		27.8
+OR		27.8
 
 
 
