@@ -23,11 +23,12 @@ wget -O hosp.zip https://data.medicare.gov/views/bg9k-emty/files/Nqcy71p9Ss2RSBW
 	hdfs dfs -mkdir /user/w205/hospital_compare/t_eff
 	hdfs dfs -mkdir /user/w205/hospital_compare/dates
 	hdfs dfs -mkdir /user/w205/hospital_compare/su_res
-	
+	hdfs dfs -mkdir /user/w205/hospital_compare/read_deaths
 
 	#Loading data
 	hdfs dfs -put hospitals.csv /user/w205/hospital_compare/qinghos_gen
 	hdfs dfs -put effective_care.csv /user/w205/hospital_compare/t_eff
 	hdfs dfs -put Measures.csv /user/w205/hospital_compare/dates
 	hdfs dfs -put surveys_responses.csv /user/w205/hospital_compare/su_res
+	hdfs dfs -put readmissions.csv /user/w205/hospital_compare/readmission_deaths
 
