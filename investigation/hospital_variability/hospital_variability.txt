@@ -2,7 +2,7 @@ Which procedures have the greatest variability between hospitals?
 
 I still use the Timely and Effective Care data set. I check the major categories categories which sames as process of hospital quality question,  Emergency Department, Surgical Care , Heart Failure, Stroke and Asthema.  
 Since there are multiple way to check the variability, standard deviation is the way I choose to answer this question and it is really efficient. 
-As the table shows below, the highest variablilty is EMR(Emergency Dempartment) and the lowest variability is Surgical Care Improvement Project  
+As the table shows below, the highest variablilty is Emergency Dempartment and the lowest variability is Surgical Care Improvement Project  
 
 Eergency	37.7654203533417
 Surgerycare	1.3191935869825644
