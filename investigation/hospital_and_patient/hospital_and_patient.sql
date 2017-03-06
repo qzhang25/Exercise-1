@@ -19,32 +19,33 @@ ORDER BY total_dimession_score DESC;
 --Combine the previous table with the Hospital Average table for the question 1  
 DROP TABLE COMBINE_HOSPITAL;
 CREATE TABLE COMBINE_HOSPITAL AS
-SELECT FINAL_TIM.hospital_name, FINAL_TIM.test_avg, SURVEYAVG_AA.nur_dim_avg_score, SURVEYAVG_AA.doc_dim_avg_score, SURVEYAVG_AA.staff_dim_avg_score, SURVEYAVG_AA.pain_dim_avg_score, SURVEYAVG_AA.med_dim_avg_score, SURVEYAVG_AA.clquiet_dim_avg_score, SURVEYAVG_AA.disch_dim_avg_score, SURVEYAVG_AA.total_ac_avg_score, SURVEYAVG_AA.total_imp_avg_score, SURVEYAVG_AA.tot_dim_avg_score
+SELECT FINAL_TIM.hospital_name, FINAL_TIM.final_avg, SURVEYAVG_AA.nur_dimession_score, SURVEYAVG_AA.doc_dimession_score, SURVEYAVG_AA.staff_dimession_score, SURVEYAVG_AA.pain_dimession_score, SURVEYAVG_AA.med_dimession_score, SURVEYAVG_AA.clquiet_dimession_score, SURVEYAVG_AA.disch_dimession_score, SURVEYAVG_AA.total_achievement_score, SURVEYAVG_AA.total_improvement_score, SURVEYAVG_AA.total_dimession_score
 FROM FINAL_TIM
 INNER JOIN SURVEYAVG_AA
 ON FINAL_TIM.hospital_name = SURVEYAVG_AA.hospital_name
-ORDER BY FINAL_TIM.test_avg;
+ORDER BY FINAL_TIM.final_avg;
 
 
 --Correlation
+drop table FINAL_Summary;
 create table FINAL_Summary
 as
 select  inline
 (
 array
 (
-struct ('Cor_nur', (Avg(test_avg * nur_dim_avg_score) - Avg(test_avg) * Avg(nur_dim_avg_score)) / (Stddev(test_avg) * Stddev(nur_dim_avg_score))  )
-,struct ('Cor_doc', (Avg(test_avg * doc_dim_avg_score) - Avg(test_avg) * Avg(doc_dim_avg_score)) / (Stddev(test_avg) * Stddev(doc_dim_avg_score))  )
-,struct ('Cor_staff', (Avg(test_avg * staff_dim_avg_score) - Avg(test_avg) * Avg(staff_dim_avg_score)) / (Stddev(test_avg) * Stddev(staff_dim_avg_score)) )
-,struct ('Cor_pain', (Avg(test_avg * pain_dim_avg_score) - Avg(test_avg) * Avg(pain_dim_avg_score)) / (Stddev(test_avg) * Stddev(pain_dim_avg_score))   )
-,struct ('Cor_med', (Avg(test_avg * med_dim_avg_score) - Avg(test_avg) * Avg(med_dim_avg_score)) / (Stddev(test_avg) * Stddev(med_dim_avg_score))   )
-,struct ('Cor_clquiet', (Avg(test_avg * clquiet_dim_avg_score) - Avg(test_avg) * Avg(clquiet_dim_avg_score)) / (Stddev(test_avg) * Stddev(clquiet_dim_avg_score)) )
-,struct ('Cor_disch', (Avg(test_avg * disch_dim_avg_score) - Avg(test_avg) * Avg(disch_dim_avg_score)) / (Stddev(test_avg) * Stddev(disch_dim_avg_score)) )
-,struct ('Cor_tot_ach', (Avg(test_avg * total_ac_avg_score) - Avg(test_avg) * Avg(total_ac_avg_score)) / (Stddev(test_avg) * Stddev(total_ac_avg_score)) )
-,struct ('Cor_tot_imp', (Avg(test_avg * total_imp_avg_score) - Avg(test_avg) * Avg(total_imp_avg_score)) / (Stddev(test_avg) * Stddev(total_imp_avg_score)) )
-,struct ('Cor_tot_dim', (Avg(test_avg * tot_dim_avg_score) - Avg(test_avg) * Avg(tot_dim_avg_score)) / (Stddev(test_avg) * Stddev(tot_dim_avg_score)) )
+struct ('Correlation_nur', ( Avg(final_avg * nur_dimession_score) - Avg(final_avg) * Avg(nur_dimession_score)) / (Stddev(final_avg) * Stddev(nur_dimession_score))  )
+,struct ('Correlation_doc', (Avg(final_avg * doc_dimession_score) - Avg(final_avg) * Avg(doc_dimession_score)) / (Stddev(final_avg) * Stddev(doc_dimession_score))  )
+,struct ('Correlation_staff', (Avg(final_avg * staff_dimession_score) - Avg(final_avg) * Avg(staff_dimession_score)) / (Stddev(final_avg) * Stddev(staff_dimession_score)) )
+,struct ('Corrrelation_pain', (Avg(final_avg * pain_dimession_score) - Avg(final_avg) * Avg(pain_dimession_score)) / (Stddev(final_avg) * Stddev(pain_dimession_score))   )
+,struct ('Correlation_med', (Avg(final_avg * med_dimession_score) - Avg(final_avg) * Avg(med_dimession_score)) / (Stddev(final_avg) * Stddev(med_dimession_score))   )
+,struct ('Correlation_clquiet', (Avg(final_avg * clquiet_dimession_score) - Avg(final_avg) * Avg(clquiet_dimession_score)) / (Stddev(final_avg) * Stddev(clquiet_dimession_score)) )
+,struct ('Correlation_disch', (Avg(final_avg * disch_dimession_score) - Avg(final_avg) * Avg(disch_dimession_score)) / (Stddev(final_avg) * Stddev(disch_dimession_score)) )
+,struct ('Correlation_tot_ach', (Avg(final_avg * total_achievement_score) - Avg(final_avg) * Avg(total_achievement_score)) / (Stddev(final_avg) * Stddev(total_achievement_score)) )
+,struct ('Correlation_tot_imp', (Avg(final_avg * total_improvement_score) - Avg(final_avg) * Avg(total_improvement_score)) / (Stddev(final_avg) * Stddev(total_improvement_score)) )
+,struct ('Correlation_tot_dim', (Avg(final_avg * total_dimession_score) - Avg(final_avg) * Avg(total_dimession_score)) / (Stddev(final_avg) * Stddev(total_dimession_score)) )
 )
 ) as (Surv_Resp,Correlation)
 from    COMBINE_HOSPITAL;
-
+--print the correlation result
 SELECT * FROM FINAL_Summary;
