@@ -6,25 +6,19 @@ cor(X,Y)=cov(X,Y)/sd(X)sd(Y) to get my result
 Our data is match the central limited theorem and the sample size is greater than 30.  
 
 As the table shows below, all the survey responses correlation are negative.
-However, there are some outliers which have really small correlations such as Nurse Dimession(-0.09) and doctor dimession(-0.07) 
+However, there are some outliers which have really small correlations such as Discharge Dimession(-0.05) and doctor dimession(-0.07) 
  
-Finally, mostly, the survey response have strong neative correlation relationship with the hospital quality and we can say that, 
-better hospital quality have better survey response which means patients are more likely to build interation with good quality hospitals.
-
-
-
-
-
-Correlation_nur	     -0.09446222013887491
-Correlation_doc	     -0.07542833572919129
-Correlation_staff	   -0.09908672694853797
-Corrrelation_pain	   -0.13096799879756293
-Correlation_med	     -0.11152378530432969
-Correlation_clquiet  -0.12532554717709377
-Correlation_disch	   -0.05608473846225522
-Correlation_tot_ach	 -0.2225811328643212
-Correlation_tot_imp	 -0.12296272523953104
-Correlation_tot_dim	 -0.2069115086641147
+Hoever, since most correlation are smaller than -0.5, therefore, even we have a negative relationship, but the effect does not have strong relationship hopspital quality socre. 
+Correlation_nurse	-0.09446222013887408
+Correlation_doctor	-0.07542833572918953
+Correlation_staff	-0.09908672694853676
+Corrrelation_pain	-0.13096799879756152
+Correlation_medicen	-0.11152378530433064
+Correlation_clquiet	-0.12532554717709288
+Correlation_discharge	-0.0560847384622521
+Correlation_total_achievement	-0.22258113286432002
+Correlation_total_improvement	-0.1229627252395319
+Correlation_total_dimession	-0.2069115086641144
 
 
 
