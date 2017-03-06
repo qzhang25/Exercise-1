@@ -83,7 +83,7 @@ CREATE TABLE FINAL_TIM AS
 SELECT hospital_name, emergency_rank, scarei_rank, childasth_rank, hospitalf_rank,strokec_rank,
 (emergency_rank + scarei_rank + childasth_rank + hospitalf_rank + strokec_rank)/5 AS final_avg
 FROM First4_RANK
-ORDER BY final_avg ASC;
+ORDER BY final_avg DESC;
 
 --Print top 10 result 
 SELECT * FROM FINAL_TIM LIMIT 10;
