@@ -23,12 +23,12 @@ SELECT FINAL_TIM.hospital_name, FINAL_TIM.final_avg, SURVEYAVG_AA.nur_dimession_
 FROM FINAL_TIM
 INNER JOIN SURVEYAVG_AA
 ON FINAL_TIM.hospital_name = SURVEYAVG_AA.hospital_name
-ORDER BY FINAL_TIM.final_avg;
+ORDER BY FINAL_TIM.final_avg DESC;
 
 
 --Correlation
-drop table FINAL_Summary;
-create table FINAL_Summary
+DROP TABLE FINAL_Summary;
+CREATE TABLE FINAL_Summary
 as
 select  inline
 (
