@@ -1,8 +1,7 @@
 What hospitals are models of high-quality care?
 
-I use time and effective data to analysis this question.  The key things is to check each categories average scores and rank them to get the best high-quality care - average scores.
+I use time and effective data to analysis this question.  The key things is to check categories average scores and rank them to get the best high-quality care - average scores. There are many categories need to check, but in my opinion I decided to check the major 5 categories Emergency Department, Heart Failure, Surgical Care, Children’s Asthma and Stroke Care to analysis the average score for this 5 categories.
 
-There are many key checking categories which have huge impact to review hospital rank such as Emergency Department, Surgical Care Improvement Project, Children’s Asthma, Heart Failure, Stroke Care,,etc.. Therefore, I choose to check all these atetories and get the averages score among these categories and rank them to get the top 10 list result.
 
 As the table blow shows: METHODIST HEALTHCARE MEMPHIS HOSPITALS have the highest score which means is the best quality hospital.
 
