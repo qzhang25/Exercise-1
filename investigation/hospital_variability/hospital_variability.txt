@@ -4,8 +4,8 @@ I still use the Timely and Effective Care data set. I check the major categories
 Since there are multiple way to check the variability, standard deviation is the way I choose to answer this question and it is really efficient. 
 As the table shows below, the highest variablilty is EMR(Emergency Dempartment) and the lowest variability is Surgical Care Improvement Project  
 
-EMR	37.7654203533417
-SCI	1.3191935869825644
-ASTH	12.719121104332116
-HF	3.1029389457336127
-SC	5.149481390107596
+Eergency	37.7654203533417
+Surgerycare	1.3191935869825644
+ChildrenASTH	12.719121104332116
+HeartFailure	3.1029389457336127
+StrokeCare	5.149481390107596
