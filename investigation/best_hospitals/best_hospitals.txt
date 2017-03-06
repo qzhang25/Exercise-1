@@ -3,17 +3,18 @@ What hospitals are models of high-quality care?
 I use time and effective data to analysis this question.  The key things is to check categories average scores and rank them to get the best high-quality care - average scores. There are many categories need to check, but in my opinion I decided to check the major categories Emergency Department, Heart Failure, Surgical Care, Children’s Asthma and Stroke Care to analysis the average score for this  categories.
 
 
-As the table blow shows: WESLEY MEDICAL CENTER has the highest score which means is the best quality hospital.
+As the table blow shows: BOSTON CHILDREN'S HOSPITAL has the highest score which means is the best quality hospital.
 
 
-NOVANT HEALTH ROWAN MEDICAL CENTER		11.8
-MEMORIAL REGIONAL HOSPITAL		12.4
-BAYSTATE MEDICAL CENTER		12.6
-UNIVERSITY OF KENTUCKY HOSPITAL		15.2
-LAWNWOOD REGIONAL MEDICAL CENTER & HEART INSTITUTE		17.0
-CAROLINAS MEDICAL CENTER-NORTHEAST		19.0
-SAINT PETER'S UNIVERSITY HOSPITAL		20.8
-SSM ST MARYS HEALTH CENTER		22.0
-FIRSTHEALTH MOORE REGIONAL HOSPITAL		22.2
-WESLEY MEDICAL CENTER		23.2
+BOSTON CHILDREN'S HOSPITAL		83.0
+CHILDREN'S HOSPITAL & MEDICAL CENTER		82.6
+UNIVERSITY OF S A CHILDREN'S AND WOMEN'S HOS		82.0
+SAN LUKE'S MEMORIAL HOSPITAL INC		82.0
+LUCILE SALTER PACKARD CHILDREN'S HSP AT STANFORD		81.6
+CHILDREN'S HOSPITAL OF PITTSBURGH OF UPMC		80.8
+ARKANSAS CHILDREN'S HOSPITAL		80.2
+CHILDREN'S HOSPITALS & CLINICS OF MN		80.2
+CHILDREN'S HOSPITAL NMC		78.6
+PHOENIX CHILDREN'S HOSPITAL			76.6
+
 
