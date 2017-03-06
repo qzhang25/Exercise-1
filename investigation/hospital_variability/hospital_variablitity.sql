@@ -8,11 +8,11 @@ select  inline
         (
             array
             (
-                struct ('EMR'   ,STDDEV (emergency_avg_score)  )
-               ,struct ('SCI'   ,STDDEV (scarei_avg_score)  )
-               ,struct ('ASTH'  ,STDDEV (childasth_avg_score) )
-               ,struct ('HF'    ,STDDEV (hospitalf_avg_score)   )
-               ,struct ('SC'    ,STDDEV(strokec_avg_score)   )
+                struct ('Eergency'   ,STDDEV (emergency_avg_score)  )
+               ,struct ('Surgerycare'   ,STDDEV (scarei_avg_score)  )
+               ,struct ('ChildrenASTH'  ,STDDEV (childasth_avg_score) )
+               ,struct ('HeartFailure'    ,STDDEV (hospitalf_avg_score)   )
+               ,struct ('StrokeCare'    ,STDDEV(strokec_avg_score)   )
 
             )
         ) as (HOSP_VAR,RANGE)
