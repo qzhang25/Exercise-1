@@ -2,19 +2,19 @@
 DROP TABLE SURVEYAVG_AA;
 CREATE TABLE SURVEYAVG_AA AS
 SELECT hospital_name,
-AVG(nur_dim) AS nur_dim_avg_score,
-AVG(doc_dim) AS doc_dim_avg_score,
-AVG(staff_dim) AS staff_dim_avg_score,
-AVG(pain_dim) AS pain_dim_avg_score,
-AVG(med_dim) AS med_dim_avg_score,
-AVG(clquiet_dim) AS clquiet_dim_avg_score,
-AVG(disch_dim) AS disch_dim_avg_score,
-AVG(total_ac) AS total_ac_avg_score,
-AVG(total_imp) AS total_imp_avg_score,
-AVG(total_dim) AS tot_dim_avg_score
+AVG(nur_dim) AS nur_dimession_score,
+AVG(doc_dim) AS doc_dimession_score,
+AVG(staff_dim) AS staff_dimession_score,
+AVG(pain_dim) AS pain_dimession_score,
+AVG(med_dim) AS med_dimession_score,
+AVG(clquiet_dim) AS clquiet_dimession_score,
+AVG(disch_dim) AS disch_dimession_score,
+AVG(total_ac) AS total_achievement_score,
+AVG(total_imp) AS total_improvement_score,
+AVG(total_dim) AS total_dimession_score
 FROM ERdiagram_survey_resp
 GROUP BY hospital_name
-ORDER BY tot_dim_avg_score DESC;
+ORDER BY total_dimession_score DESC;
 
 --Combine the previous table with the Hospital Average table for the question 1  
 DROP TABLE COMBINE_HOSPITAL;
