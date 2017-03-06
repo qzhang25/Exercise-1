@@ -85,7 +85,7 @@ CREATE TABLE Statetime_FIN AS
 SELECT state, emrgency_rank, scarei_rank, childasth_rank, hospitalf_rank, strokec_rank,
 (emrgency_rank + scarei_rank + childasth_rank + hospitalf_rank + strokec_rank )/5 AS summary_avg
 FROM Statetime_RANK
-ORDER BY summary_avg ASC;
+ORDER BY summary_avg DESC;
 
 --list top 10 states
 SELECT * FROM Statetime_FIN LIMIT 10;
