@@ -9,8 +9,8 @@ AVG(pain_dimession) AS pain_dimession_score,
 AVG(med_dimession) AS med_dimession_score,
 AVG(clquiet_dimession) AS clquiet_dimession_score,
 AVG(disch_dimession) AS disch_dimession_score,
-AVG(total_ac) AS total_achievement_score,
-AVG(total_imp) AS total_improvement_score,
+AVG(total_achieve) AS total_achievement_score,
+AVG(total_improve) AS total_improvement_score,
 AVG(total_dimession) AS total_dimession_score
 FROM ERdiagram_survey_resp
 GROUP BY hospital_name
