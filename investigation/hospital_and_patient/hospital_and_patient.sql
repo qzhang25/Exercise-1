@@ -2,7 +2,7 @@
 DROP TABLE SURVEYAVG_AA;
 CREATE TABLE SURVEYAVG_AA AS
 SELECT hospital_name,
-AVG(nur_dim) AS nur_dimession_score,
+AVG(nurse_dimession) AS nur_dimession_score,
 AVG(doc_dim) AS doc_dimession_score,
 AVG(staff_dim) AS staff_dimession_score,
 AVG(pain_dim) AS pain_dimession_score,
